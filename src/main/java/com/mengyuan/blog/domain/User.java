@@ -1,16 +1,28 @@
 package com.mengyuan.blog.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * 用户实体
  * @author MengYuan
  *
  */
+@Entity
+@Table(name = "user")
 public class User {
-    private Long id;
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)   //自增
+    private Long id;    //主键
     private String name;
     private String email;
     
-    public User(){
+    // 防止直接使用
+    protected User(){
         
     }
     
@@ -39,5 +51,8 @@ public class User {
         this.email = email;
     }
     
+    public String toString() {
+        return String.format("User[id=%d, name='%s', email='%s'", id, name, email);
+    }
     
 }

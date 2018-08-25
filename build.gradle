@@ -12,9 +12,12 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
 	
-	// 自定义thymeleaf 和 thymeleaf-layout-dialect的版本
+	// thymeleaf version
 	ext['thymeleaf.version'] = '3.0.3.RELEASE'
 	ext['thymeleaf-layout-dialect.version'] = '2.2.0'
+	
+	// hibernate version
+	ext['hibernate.version'] = '5.2.8.Final'
 }
 
 apply plugin: 'java'
@@ -36,8 +39,25 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	
-	// 添加 Thymeleaf
+
+    compile('org.springframework.boot:spring-boot-starter-aop')
+
+	//  Thymeleaf
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	
+	// add Spring Data JPA
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	
+	//add mysql driver
+	runtime('mysql:mysql-connector-java')
+	
+	// add Spring Data Elasticsearch
+	compile('org.springframework.boot:spring-boot-starter-data-elasticsearch')
+	
+	// add JNA
+	compile('net.java.dev.jna:jna:4.3.0')
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	//add H2 
+	//runtime('com.h2database:h2:1.4.193')
 }
