@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/resources/application.properties=UTF-8
+encoding//src/main/resources/templates/users/form.html=UTF-8
+encoding//src/main/resources/templates/users/list.html=UTF-8
+encoding//src/main/resources/templates/users/view.html=UTF-8
 encoding/<project>=UTF-8
