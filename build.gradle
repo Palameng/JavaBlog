@@ -60,4 +60,13 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	//add H2 
 	//runtime('com.h2database:h2:1.4.193')
+	
+	// add Spring Security
+	compile('org.springframework.boot:spring-boot-starter-security')
+	
+    // add Thymeleaf Spring Security
+    compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.2.RELEASE')
+   
+      // add Apache Commons Lang
+    compile('org.apache.commons:commons-lang3:3.5')
 }
